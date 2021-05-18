@@ -1,10 +1,16 @@
 package chapter02;
 
+/**
+ *
+ * @author システム開発部
+ *
+ *演習2-1
+ *List 2-6の2⃣の箇所（int変数 x,y に整数値を代入している）を、小数部を持つ実数値をxとyに代入するように変更して、その結果を考察せよ。
+ */
+
 public class practice2_1 {
 
 	public static void main(String[] args) {
-		//演習2-1
-		//List 2-6の2⃣の箇所（int変数 x,y に整数値を代入している）を、小数部を持つ実数値をxとyに代入するように変更して、その結果を考察せよ。
 
 		//整数型の変数を宣言
 		int x, y;

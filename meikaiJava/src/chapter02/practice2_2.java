@@ -1,10 +1,16 @@
 package chapter02;
 
+/**
+ *
+ * @author システム開発部
+ *
+ *演習2-2
+ *三つのint型変数に値を代入し、合計と平均を求めるプログラムを作成せよ。
+ */
+
 public class practice2_2 {
 
 	public static void main(String[] args) {
-		//演習2-2
-		//三つのint型変数に値を代入し、合計と平均を求めるプログラムを作成せよ。
 
 		//三つのint型変数を宣言
 		int number1, number2, number3;

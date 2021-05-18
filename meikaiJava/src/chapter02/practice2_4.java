@@ -1,14 +1,17 @@
 package chapter02;
 
 /**
- *演習2-3
- *右に示すように、キーボードから読み込んだ整数値をそのまま反復して表示するプログラムを作成せよ。
+ * 
+ * @author システム開発部
+ *
+ *演習2-4
+ *右に示すように、キーボードから読み込んだ整数値に10を加えた値と10を減じた値を出力するプログラムを作成せよ。
  */
 
 //参照するクラスを記述
 import java.util.Scanner;
 
-public class practice2_3 {
+public class practice2_4 {
 
 	public static void main(String[] args) {
 
@@ -18,8 +21,9 @@ public class practice2_3 {
 		System.out.print("整数値:");
 		//int型の変数を宣言し、キーボードから入力された値で初期化
 		int number = standardInput.nextInt();
-		//変数を含む文字列を出力
-		System.out.println("入力した値は" + number + "ですね。");
+		//変数に10を加えた値と10を減じた値を含む文字列を出力
+		System.out.print("10を加えた値は" + (number + 10) +
+				"です。\n10を減じた値は" + (number - 10) + "です。");
 
 	}
 
