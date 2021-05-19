@@ -33,13 +33,14 @@ public class practice4_3 {
 		}
 
 		//1つめの整数に1加算し、2つに整数の間の数の最小の数にする
-		number1 = number1 + 1;
+		number1++;
+
 		//繰り返す処理内容
 		do {
 			//1つめの整数を出力
 			System.out.print(number1 + " ");
 			//1つめの整数に1加算
-			number1 = number1 + 1;
+			number1++;
 		} while (number1 != number2);//1つめの整数と2つめの整数と等しくない場合繰り返し
 	}
 
