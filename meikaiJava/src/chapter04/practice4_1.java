@@ -27,14 +27,17 @@ public class practice4_1 {
 			int number = standardInput.nextInt();
 
 			//入力された整数が0より大きい場合、正の数のメッセージを出力
-			if (number > 0)
+			if (number > 0) {
 				System.out.println("その値は正の数です。");
+			}
 			//入力された整数が0より小さい場合、負の数のメッセージを出力
-			if (number < 0)
+			if (number < 0) {
 				System.out.println("その値は負の数です。");
+			}
 			//入力された整数が0の場合、0のメッセージを出力
-			if (number == 0)
+			if (number == 0) {
 				System.out.println("その値は0です。");
+			}
 
 			//繰り返し要否を確認するメッセージを出力
 			System.out.println("もう一度？　1…Yes／2…No");

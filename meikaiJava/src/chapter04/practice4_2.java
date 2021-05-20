@@ -36,11 +36,13 @@ public class practice4_2 {
 			answer = standardInput.nextInt();
 
 			//乱数より回答の値が小さい場合、「もっと大きい数」のメッセージを出力
-			if (correct < answer)
+			if (correct < answer) {
 				System.out.println("smaller");
+			}
 			//乱数より回答の値が大きい場合、「もっと小さい数」のメッセージを出力
-			if (correct > answer)
+			if (correct > answer) {
 				System.out.println("larger");
+			}
 		} while (correct != answer); //回答と乱数が等しくなければ繰り返し
 
 		//正解のメッセージを出力
