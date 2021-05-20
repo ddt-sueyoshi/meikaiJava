@@ -23,9 +23,10 @@ public class practice3_1 {
 		int number = standardInput.nextInt();
 
 		//入力された整数が0以下の場合
-		if (number < 0)
+		if (number < 0) {
 			//変数の符号を反転させて代入
 			number = -number;
+		}
 
 		//絶対値を文字列で出力
 		System.out.print("その絶対値は" + number + "です。");

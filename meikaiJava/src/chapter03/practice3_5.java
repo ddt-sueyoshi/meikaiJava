@@ -25,17 +25,20 @@ public class practice3_5 {
 		int number = standardInput.nextInt();
 
 		//入力された数が0より小さい場合
-		if (number < 0)
+		if (number < 0) {
 			//文字列を出力
 			System.out.print("正でない値が入力されました。");
+		}
 		//入力された数を5で割った剰余が0と等しい時
-		else if ((number % 5) == 0)
+		else if ((number % 5) == 0) {
 			//文字列を出力
 			System.out.print("『その値は5で割り切れます。』");
+		}
 		//その他の場合
-		else
+		else {
 			//文字列を出力
 			System.out.print("その値は5で割り切れません。");
+		}
 
 	}
 

@@ -24,21 +24,25 @@ public class practice3_8 {
 		int number = standardInput.nextInt();
 
 		//入力された整数が60より小さい場合
-		if(number<60)
-		//文字列を出力
-		System.out.print("不可");
+		if (number < 60) {
+			//文字列を出力
+			System.out.print("不可");
+		}
 		//入力された整数が70より小さい場合
-		else if(number<70)
-		//文字列を出力
-		System.out.print("可");
+		else if (number < 70) {
+			//文字列を出力
+			System.out.print("可");
+		}
 		//入力された整数が80より小さい場合
-		else if(number<80)
-		//文字列を出力
-		System.out.print("良");
+		else if (number < 80) {
+			//文字列を出力
+			System.out.print("良");
+		}
 		//入力された整数が100以下の場合
-		else if(number<=100)
-		//文字列を出力
-		System.out.print("優");
+		else if (number <= 100) {
+			//文字列を出力
+			System.out.print("優");
+		}
 
 	}
 

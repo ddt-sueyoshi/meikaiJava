@@ -1,7 +1,7 @@
 package chapter03;
 
 /**
- * 
+ *
  * @author システム開発部
  *
  *演習3-2
@@ -31,13 +31,15 @@ public class practice3_2 {
 		int number2 = standardInput.nextInt();
 
 		//BをAで割った剰余が0と等しい場合
-		if ((number2 % number1) == 0)
+		if ((number2 % number1) == 0) {
 			//文字列を出力（約数である）
 			System.out.print("BはAの約数です。");
+		}
 		//そうでない（剰余が0でない）場合
-		else
+		else {
 			//文字列を出力（約数でない）
 			System.out.print("BはAの約数ではありません。");
+		}
 
 	}
 

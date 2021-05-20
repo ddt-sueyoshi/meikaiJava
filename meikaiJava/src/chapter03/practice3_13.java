@@ -31,34 +31,24 @@ public class practice3_13 {
 		//整数の変数を宣言し、キーボードから読み込んだ値を代入
 		int number3 = standardInput.nextInt();
 
-		//退避用の整数型変数を宣言
-		int number4;
+		//中央値用の整数型変数を宣言
+		int middle;
 
-		//１つめ整数より2つ目の整数が小さい場合
-		if (number1 > number2) {
-			//1つめの値、2つめの値を入れ替える
-			number4 = number1; //1つめの整数を退避
-			number1 = number2; //1つめの整数に2つめの整数の値を代入
-			number2 = number4; //2つめの整数に退避した整数を代入
+		//小さい順に2つめ、1つめ、3つめまたは3つめ、1つめ、2つめの場合
+		if ((number2 >= number1&&number1>=number3)||(number3<=number1&&number1<=number2)) {
+			middle=number1; //中央値は1つめ
+		}
+		//小さい順に1つめ、2つめ、3つめまたは3つめ、2つめ、1つめの場合
+		else if ((number1 >= number2&&number2>=number3)||(number1<=number2&&number2<=number3)) {
+			middle=number2; //中央値は2つめ
+		}
+		//小さい順に1つめ、3つめ、2つめまたは2つめ、3つめ、1つめの場合
+		else {
+			middle=number3; //中央値は3つめ
 		}
 
-		//1つめの整数より3つめの整数が小さい場合
-		if (number1 > number3) {
-			//3つめの値、1つめの値、2つめの値の順に並べ替える
-			number4 = number1; //1つめの整数を退避
-			number1 = number3; //1つめの整数に3つめの整数の値を代入
-			number2 = number1; //2つめの整数に1つめの整数の値を代入
-			number3 = number4; //3つめの整数に退避した整数を代入
-			//1つめの整数より3つめの整数が小さくなく、2つめの整数より3つめの整数が小さい場合
-		} else if (number2 > number3) {
-			//2つめの値、3つめの値を入れ替える
-			number4 = number2; //2つめの整数を退避
-			number2 = number3; //2つめの整数に3つめの整数の値を代入
-			number3 = number4; //3つめの整数に退避した整数を代入
-		}
-
-		//2つめの整数を含む文字列を表示
-		System.out.print("中央値は" + number2 + "です。");
+		//中央値を含む文字列を表示
+		System.out.print("中央値は" + middle + "です。");
 
 	}
 

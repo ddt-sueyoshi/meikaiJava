@@ -36,7 +36,7 @@ public class practice3_15 {
 		}
 
 		//値を大きい順に表示する文字列を出力
-		System.out.println("整数a：" + number1 + "\n整数b：" + number2);
+		System.out.println("小さいほうから順に " + number1 + "," + number2);
 
 	}
 

@@ -25,21 +25,25 @@ public class practice3_7 {
 		int number = standardInput.nextInt();
 
 		//入力された数が0より小さい場合
-		if (number < 0)
+		if (number < 0) {
 			//文字列を出力
 			System.out.print("正でない値が入力されました。");
+		}
 		//3で割った剰余が0と等しい場合
-		else if ((number % 3) == 0)
+		else if ((number % 3) == 0) {
 			//文字列を出力
 			System.out.print("その値は3で割り切れます。");
+		}
 		//3で割った剰余が1と等しい場合
-		else if ((number % 3) == 1)
+		else if ((number % 3) == 1) {
 			//文字列を出力
 			System.out.print("その値を3で割った余りは1です。");
+		}
 		//そのほかの場合
-		else
+		else {
 			//文字列を出力
 			System.out.print("その値を3で割った余りは2です。");
+		}
 
 	}
 

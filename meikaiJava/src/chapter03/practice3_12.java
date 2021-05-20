@@ -33,13 +33,15 @@ public class practice3_12 {
 		//最小値を格納する変数を宣言、1つ目の変数を代入
 		int minimum = number1;
 		//最小値の変数より2つ目の変数が小さい場合
-		if (number2 < minimum)
+		if (number2 < minimum) {
 			//最小値の変数に2つ目の変数を代入
 			minimum = number2;
+		}
 		//最小値の変数より3つ目の変数が小さい場合
-		if (number3 < minimum)
+		if (number3 < minimum) {
 			//最小値の変数に3つ目の変数を代入
 			minimum = number3;
+		}
 
 		//最小値変数を含む文字列を表示
 		System.out.print("最小値は" + minimum + "です。");

@@ -55,7 +55,7 @@ public class practice3_16 {
 		}
 
 		//小さい順に並べた整数を含む文字列を表示
-		System.out.print(number1 + "," + number2 + "," + number3);
+		System.out.print("小さいほうから順に " + number1 + "," + number2 + "," + number3);
 
 	}
 

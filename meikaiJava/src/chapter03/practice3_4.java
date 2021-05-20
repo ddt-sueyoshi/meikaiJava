@@ -21,26 +21,29 @@ public class practice3_4 {
 		System.out.print("整数A：");
 		//整数型の変数を宣言
 		//キーボードから読み込んだ整数値を代入
-		int number_a = standardInput.nextInt();
+		int number1 = standardInput.nextInt();
 
 		//入力を促す文字列を出力
 		System.out.print("整数B：");
 		//整数型の変数を宣言
 		//キーボードから読み込んだ整数値を代入
-		int number_b = standardInput.nextInt();
+		int number2 = standardInput.nextInt();
 
 		//aがbより大きい場合
-		if (number_a > number_b)
+		if (number1 > number2) {
 			//文字列を出力
 			System.out.print("aのほうが大きいです。");
+		}
 		//bがaより大きい場合
-		else if (number_b > number_a)
+		else if (number2 > number1) {
 			//文字列を出力
 			System.out.print("bのほうが大きいです。");
+		}
 		//そのほかの場合
-		else
+		else {
 			//文字列を出力
 			System.out.print("aとbは同じ値です。");
+		}
 
 	}
 
