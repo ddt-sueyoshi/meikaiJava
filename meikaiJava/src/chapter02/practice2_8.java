@@ -28,7 +28,7 @@ public class practice2_8 {
 		//整数の変数を宣言し、
 		//0から10の整数をランダムに生成し5を減算
 		//-5から5のランダムな値として代入する
-		int number2 = (random.nextInt(10)) - 5;
+		int number2 = (random.nextInt(11)) - 5;
 
 		//読み込んだ整数値プラスマイナス5の合計を含む文字列を表示
 		System.out.print("その値の±5の乱数を生成しました。それは" + (number1 + number2) + "です。");

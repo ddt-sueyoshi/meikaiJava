@@ -26,11 +26,11 @@ public class practice2_9 {
 		//小数部を含む実数の変数を宣言
 		//0から9の間でランダムに生成した整数、0.0以上1.0未満でランダムに生成した実数を加算
 		//0.0以上10.0未満のランダムな実数値として代入する
-		double number2 = (random.nextInt(9)) + (random.nextDouble());
+		double number2 = (random.nextInt(10)) + (random.nextDouble());
 		//小数部を含む実数の変数を宣言し、
 		//0から1の間でランダムに生成した整数と、0.0以上1.0未満でランダムに生成した実数を加算
 		//-1.0以上1.0未満のランダムな実数値として代入する
-		double number3 = (random.nextInt(1)) + (random.nextDouble()) - 1;
+		double number3 = (random.nextInt(2)) + (random.nextDouble()) - 1;
 		//それぞれの値を含む文字列を表示する
 		System.out.print("0.0以上1.0未満の実数値" + number1 +
 				"\n0.0以上10.0未満の実数値" + number2 +
