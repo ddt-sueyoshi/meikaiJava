@@ -33,17 +33,17 @@ public class practice6_6 {
 		int min = scores[0];
 
 		//人数分繰り返し
-		for(int i=0;i<scores.length;i++) {
-		//合計点に点数を加算
-			summery+=scores[i];
-		//最高点より大きい値なら、最高点に代入
-			if(scores[i]>max) {max=scores[i];}
-		//最低点より小さい値なら、最低点に代入
-			if(scores[i]<min) {min=scores[i];}
+		for (int i = 0; i < scores.length; i++) {
+			//合計点に点数を加算
+			summery += scores[i];
+			//最高点より大きい値なら、最高点に代入
+			if (scores[i] > max) { max = scores[i]; }
+			//最低点より小さい値なら、最低点に代入
+			if (scores[i] < min) { min = scores[i]; }
 		}
-		
+
 		//合計点・平均点・最高点・最低点を表示
-		System.out.print("合計点："+summery+"　　平均点："+(summery/scores.length)+"\n最高点："+max+"　　最低点："+min);
+		System.out.print("合計点：" + summery + "　　平均点：" + (summery / scores.length) + "\n最高点：" + max + "　　最低点：" + min);
 	}
 
 }
