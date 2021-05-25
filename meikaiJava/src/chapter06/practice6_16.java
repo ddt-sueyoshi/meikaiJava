@@ -20,7 +20,7 @@ public class practice6_16 {
 		int[][] numbersA = new int[4][3];
 		int[][] numbersB = new int[3][4];
 		//二つの整数の積を格納する配列
-		int[][] numbersProducts = new int[4][3];
+		int[][] numbersProducts = new int[4][4];
 
 		//Aの行分繰り返す
 		for (int i = 0; i < numbersA.length; i++) {
@@ -40,22 +40,22 @@ public class practice6_16 {
 			}
 		}
 
-		//Aの行分繰り返す
-		for (int i = 0; i < numbersA.length; i++) {
-		//Aの列分繰り返す
-			for (int j = 0; j < numbersA[i].length; j++) {
-				//Bの行分繰り返す
-				for (int k = 0; k < numbersB.length; k++) {
+		//積の行分繰り返す
+		for (int i = 0; i < numbersProducts.length; i++) {
+		//積の列分繰り返す
+			for (int j = 0; j < numbersProducts[i].length; j++) {
+				//Aの1行分繰り返す
+				for (int k = 0; k < numbersA[i].length; k++) {
 						//積[i][j]にA[i行][j列]*B[j][k]を加算
-						numbersProducts[i][j]+=(numbersA[i][j]*numbersB[j][k]);
+						numbersProducts[i][j]+=(numbersA[i][k]*numbersB[k][j]);
 				}
 
 			}
 		}
 
-		//Aの行分繰り返す
+		//積の行分繰り返す
 				for (int i = 0; i < numbersProducts.length; i++) {
-				//Aの列分繰り返す
+				//積の列分繰り返す
 					System.out.print("{ ");
 					for (int j = 0; j < numbersProducts[i].length; j++) {
 						//積を表示
