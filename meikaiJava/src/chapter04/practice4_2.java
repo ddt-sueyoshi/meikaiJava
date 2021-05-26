@@ -26,12 +26,12 @@ public class practice4_2 {
 		int answer;
 
 		//ゲームの開始メッセージを出力
-		System.out.println("game start!\nchoose number in 10~89");
+		System.out.println("game start!\nchoose number in 10~99");
 
 		//繰り返す処理内容
 		do {
 			//入力を促す文字列を出力
-			System.out.print("what numser?");
+			System.out.print("what number?");
 			//回答にキーボードから読み込んだ整数値を代入
 			answer = standardInput.nextInt();
 
