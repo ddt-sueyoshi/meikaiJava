@@ -26,7 +26,7 @@ public class practice4_26 {
 		//合計を格納する変数を初期化
 		int sum = 0;
 		//実際に加算した回数をカウントする変数
-		int count=0;
+		int count = 0;
 
 		for (int i = 0; i < n; i++) {
 			//整数の入力を促すメッセージ出力
@@ -44,8 +44,12 @@ public class practice4_26 {
 			count++;
 		}
 
-		//合計値と平均値を含むメッセージ出力
-		System.out.print("合計：" + sum + "平均：" + (sum / count));
+		if (count != 0) {
+			//合計値と平均値を含むメッセージ出力
+			System.out.print("合計：" + sum + "平均：" + (sum / count));
+		} else {
+			System.out.println("0以上の整数が入力されませんでした。");
+		}
 
 	}
 

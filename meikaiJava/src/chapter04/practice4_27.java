@@ -1,4 +1,10 @@
 package chapter04;
+/**
+ * 演習4-27
+ * List4-3の数当てゲームのプレイヤーが入力できる回数に制限を設けたプログラムを作成せよ。
+ * 制限回数内にあてられなかった場合には、正解を表示してゲームを終了すること。
+ * ※問題文には指定がないが「■ラベル付きcontinue文」の見出しページ中の演習のため、ラベルを使用
+ */
 
 import java.util.Random;
 import java.util.Scanner;
@@ -28,11 +34,11 @@ public class practice4_27 {
 				//回答にキーボードから読み込んだ整数値を代入
 				answer = standardInput.nextInt();
 
-				//乱数より回答の値が小さい場合、「もっと大きい数」のメッセージを出力
+				//乱数より回答の値が小さい場合、「もっと小さい数」のメッセージを出力
 				if (correct < answer) {
 					System.out.println("smaller");
 				}
-				//乱数より回答の値が大きい場合、「もっと小さい数」のメッセージを出力
+				//乱数より回答の値が大きい場合、「もっと大きい数」のメッセージを出力
 				if (correct > answer) {
 					System.out.println("larger");
 				}

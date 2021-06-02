@@ -1,4 +1,5 @@
 package chapter04;
+
 /**
  *
  * @author システム開発部
@@ -22,14 +23,18 @@ public class practice4_24 {
 		int number = standardInput.nextInt();
 
 		//1から入力された整数まで繰り返し
-		for (int i = 2; i <= number/2; i++) {
+		for (int i = 1; i <= number; i++) {
 			//入力された整数を割り切れたらメッセージを表示しループを抜ける
-			if (number % i == 0) {
+			if(number<=3) {
+				System.out.print("素数です！");
+				break;
+			}
+			if (number % i == 0 && i != number &&i != 1 ) {
 				System.out.print("素数ではない。");
 				break;
 			}
-			//入力された整数/2まで繰り返したらメッセージを表示
-			if(i==number/2) {
+			//入力された整数まで繰り返したらメッセージを表示
+			if (i == number) {
 				System.out.print("素数です！");
 			}
 		}
