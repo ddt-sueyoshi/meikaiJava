@@ -31,11 +31,11 @@ public class practice4_1 {
 				System.out.println("その値は正の数です。");
 			}
 			//入力された整数が0より小さい場合、負の数のメッセージを出力
-			if (number < 0) {
+			else if (number < 0) {
 				System.out.println("その値は負の数です。");
 			}
 			//入力された整数が0の場合、0のメッセージを出力
-			if (number == 0) {
+			else {
 				System.out.println("その値は0です。");
 			}
 

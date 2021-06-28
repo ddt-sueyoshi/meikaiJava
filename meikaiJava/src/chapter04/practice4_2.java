@@ -40,7 +40,7 @@ public class practice4_2 {
 				System.out.println("smaller");
 			}
 			//乱数より回答の値が大きい場合、「もっと小さい数」のメッセージを出力
-			if (correct > answer) {
+			else if (correct > answer) {
 				System.out.println("larger");
 			}
 		} while (correct != answer); //回答と乱数が等しくなければ繰り返し

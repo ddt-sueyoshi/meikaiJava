@@ -16,16 +16,18 @@ public class practice4_24 {
 
 		//読み込み用のクラスを生成
 		Scanner standardInput = new Scanner(System.in);
-
-		//整数の入力を促すメッセージ出力
-		System.out.print("整数：");
-		//整数変数をキーボードから読み込み初期化
-		int number = standardInput.nextInt();
+		int number;
+		do {
+			//整数の入力を促すメッセージ出力
+			System.out.print("整数：");
+			//整数変数をキーボードから読み込み初期化
+			number = standardInput.nextInt();
+		} while (number <= 0);
 
 		//1から入力された整数まで繰り返し
 		for (int i = 1; i <= number; i++) {
 			//入力された整数を割り切れたらメッセージを表示しループを抜ける
-			if(number<=3 &&i != 1 ) {
+			if (number <= 3 && i != 1) {
 				System.out.print("素数です！");
 				break;
 			}

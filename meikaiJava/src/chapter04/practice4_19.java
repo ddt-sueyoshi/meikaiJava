@@ -1,6 +1,6 @@
 package chapter04;
 /**
- * 
+ *
  * @author システム開発部
  *演習4-19
  *季節を求めるList4-1（p.95）の月の読み込みについて、1~12以外の値が入力された場合は、
@@ -16,7 +16,7 @@ public class practice4_19 {
 		Scanner standardInput = new Scanner(System.in); //読み込み用のクラスを生成
 
 		int retry = 0; //繰り返しフラグの整数変数
-		
+
 		//繰り返しフラグが1なら繰り返す処理
 		do {
 			//月を格納する整数変数
@@ -31,13 +31,13 @@ public class practice4_19 {
 			if (month >= 3 && month <= 5) {
 				System.out.println("春"); //3～5月なら春と出力
 			}
-			if (month >= 6 && month <= 8) {
+			else if (month >= 6 && month <= 8) {
 				System.out.println("夏"); //6～8月なら夏と出力
 			}
-			if (month >= 9 && month <= 11) {
+			else if (month >= 9 && month <= 11) {
 				System.out.println("秋"); //9～11月なら秋と出力
 			}
-			if (month == 12 || (month >= 1 && month <= 2)) {
+			else {
 				System.out.println("冬"); //12・1・2月なら冬と出力
 			}
 

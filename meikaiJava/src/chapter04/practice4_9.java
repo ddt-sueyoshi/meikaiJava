@@ -18,7 +18,6 @@ public class practice4_9 {
 		//入力された整数を格納する変数
 		int number;
 		do {
-			;
 			//入力を促すメッセージ出力
 			System.out.print("正の整数：");
 			//キーボードから読み込んだ値を代入
