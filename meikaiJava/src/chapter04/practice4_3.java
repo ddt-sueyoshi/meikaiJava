@@ -27,7 +27,7 @@ public class practice4_3 {
 			bigNumber = standardInput.nextInt();
 		} while (bigNumber == littleNumber); //異なる数字が入力されるまで繰り返し
 
-		//もし1つめの整数が2つ目の整数が大きい場合
+		//もし1つめの整数が2つ目の整数より大きい場合
 		if (littleNumber > bigNumber) {
 			//入力された2つの変数を入れ替える
 			int backup = littleNumber; //退避用の変数を宣言、1つめの整数の値を代入

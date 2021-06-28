@@ -34,11 +34,11 @@ public class practice4_27 {
 				//回答にキーボードから読み込んだ整数値を代入
 				answer = standardInput.nextInt();
 
-				//乱数より回答の値が小さい場合、「もっと小さい数」のメッセージを出力
+				//乱数より回答の値が大きい場合、「もっと小さい数」のメッセージを出力
 				if (correct < answer) {
 					System.out.println("smaller");
 				}
-				//乱数より回答の値が大きい場合、「もっと大きい数」のメッセージを出力
+				//乱数より回答の値が小さい場合、「もっと大きい数」のメッセージを出力
 				if (correct > answer) {
 					System.out.println("larger");
 				}

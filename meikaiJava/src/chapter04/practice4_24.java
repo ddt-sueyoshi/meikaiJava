@@ -25,11 +25,11 @@ public class practice4_24 {
 		//1から入力された整数まで繰り返し
 		for (int i = 1; i <= number; i++) {
 			//入力された整数を割り切れたらメッセージを表示しループを抜ける
-			if(number<=3) {
+			if(number<=3 &&i != 1 ) {
 				System.out.print("素数です！");
 				break;
 			}
-			if (number % i == 0 && i != number &&i != 1 ) {
+			if (number % i == 0 && i != number) {
 				System.out.print("素数ではない。");
 				break;
 			}
