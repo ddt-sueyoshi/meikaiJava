@@ -1,7 +1,7 @@
 package chapter07;
 
 /**
- * 
+ *
  * @author システム開発部
  *演習7-7
  *List7-7に示したn個の'*'を連続表示するメソッドputStarsを、内部でList7-8のメソッドputCharsを呼び出すことによって表示を行うように書きかえよ。
@@ -10,8 +10,11 @@ package chapter07;
 import java.util.Scanner;
 
 public class practice7_7 {
-
-	//受け取った文字 charactorを受け取った整数 number個表示する
+	/**
+	 * 受け取った文字 charactorを受け取った整数 number個表示する
+	 * @param charactor: 文字
+	 * @param number: 表示する回数の整数値
+	 */
 	static void putChars(char charactor, int number) {
 		while (number-- >= 0) {
 			System.out.print(charactor);

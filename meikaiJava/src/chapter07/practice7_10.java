@@ -2,7 +2,7 @@ package chapter07;
 
 import java.util.Random;
 /**
- * 
+ *
  * @author システム開発部
  *演習7-10
  *List7-10を拡張して、以下の四つの問題をランダムに出題するプログラムを作成せよ。
@@ -20,7 +20,10 @@ public class practice7_10 {
 	static Scanner standardInput = new Scanner(System.in);
 	static Random random = new Random();
 
-	//続行の要否を確認
+	/**
+	 * 続行の要否を確認
+	 * @return: 要ならtrue、否ならfalse
+	 */
 	static boolean confirRetry() {
 		int cont;
 		do {
@@ -32,7 +35,12 @@ public class practice7_10 {
 		return (cont == 1);
 	}
 
-	//3つの整数を受け取り、加算減算を組み合わせた問題をランダムに出題
+	/**
+	 * 3つの整数を受け取り、加算減算を組み合わせた問題をランダムに出題
+	 * @param x: 整数値
+	 * @param y: 整数値
+	 * @param z: 整数値
+	 */
 	static void mathQuestion(int x, int y, int z) {
 		String question = ""; //問題を格納する文字列変数
 		int correct = 0; //正解を格納する整数変数
@@ -82,7 +90,7 @@ public class practice7_10 {
 
 			//読み込んだ整数で加算減算の組み合わせ問題を出題
 			mathQuestion(number1, number2, number3);
-		} while (confirRetry());	//繰り返しの要否を確認
+		} while (confirRetry()); //繰り返しの要否を確認
 	}
 
 }

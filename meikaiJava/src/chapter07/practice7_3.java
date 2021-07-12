@@ -3,7 +3,7 @@ package chapter07;
 import java.util.Scanner;
 
 /**
- * 
+ *
  * @author システム開発部
  *演習7-3
  *三つのint型引数a,b,cの中央値を求めるメソッドmedを作成せよ。
@@ -27,7 +27,13 @@ public class practice7_3 {
 
 	}
 
-	//3つの整数を引数として受け取り、中央値の整数を返す
+/**
+ * 3つの整数を引数として受け取り、中央値の整数を返す
+ * @param a: 整数値
+ * @param b: 整数値
+ * @param c: 整数値
+ * @return: a,b,cの中央値の整数値
+ */
 	static int med(int a, int b, int c) {
 		//昇順に b,a,c または c,a,b なら a を返却
 		if ((b <= a && a <= c) || (c <= a && a <= b))

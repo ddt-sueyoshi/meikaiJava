@@ -1,7 +1,7 @@
 package chapter07;
 
 /**
- * 
+ *
  * @author システム開発部
  *演習7-6
  *引数で指定された月の季節を表示するメソッドprintSeasonを表示せよ。
@@ -9,9 +9,13 @@ package chapter07;
  */
 //参照するクラスを宣言
 import java.util.Scanner;
+
 public class practice7_6 {
 
-	// 引数の整数に応じて季節を表示する
+	/**
+	 * 引数の整数に応じて季節を表示する
+	 * @param m: 月を表す整数値
+	 */
 	static void printSeason(int m) {
 		switch (m) {
 		//3～5であれば『春』
@@ -47,11 +51,11 @@ public class practice7_6 {
 
 	public static void main(String[] args) {
 		//読み込みクラスを生成
-		Scanner standardInput=new Scanner(System.in);
-		
+		Scanner standardInput = new Scanner(System.in);
+
 		//入力された月を変数に格納
 		System.out.print("何月？：");
-		int month=standardInput.nextInt();
+		int month = standardInput.nextInt();
 		//月変数でprintSeasonメソッドを呼び出す
 		printSeason(month);
 	}

@@ -13,8 +13,12 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class practice7_8 {
-
-	//最小値と最大値の整数を受け取り、その間の乱数を返す
+	/**
+	 * 最小値と最大値の整数を受け取り、その間の乱数を返す
+	 * @param min: 最小値
+	 * @param max: 最大値
+	 * @return: min以上max以下の乱数
+	 */
 	static int random(int min, int max) {
 		//最小最大が正しくない場合最小値を返す
 		if (min > max)

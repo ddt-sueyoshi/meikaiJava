@@ -1,6 +1,7 @@
 package chapter07;
+
 /**
- * 
+ *
  * @author システム開発部
  *演習7-4
  *1からnまでの全整数の和を求めて返却するメソッドを作成せよ。
@@ -17,15 +18,20 @@ public class practice7_4 {
 		//入力された整数を変数に格納
 		System.out.print("整数1からnまでの和を求める　n：");
 		int number = standardInput.nextInt();
-		
+
 		System.out.print(sumUp(number));
 	}
-	
+
+	/**
+	 *
+	 * @param a: 整数値
+	 * @return: 1からaまでの全整数の和の整数値
+	 */
 	static int sumUp(int a) {
-		int summery=0;
+		int summery = 0;
 		do {
-			summery+=a;
-		}while(a-->0);
+			summery += a;
+		} while (a-- > 0);
 		return summery;
 	}
 
