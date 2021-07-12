@@ -49,7 +49,7 @@ public class practice6_11 {
 						break;	//確認ループを抜けdo文に戻る
 					}
 				}
-			} while (retry == true);
+			} while (retry);
 
 			//乱数を配列の値として格納
 			numbers[i] = number;
@@ -59,7 +59,6 @@ public class practice6_11 {
 		for (int number : numbers) {
 			System.out.print(number + " ");
 		}
-
 	}
 
 }

@@ -29,7 +29,11 @@ public class practice6_13 {
 		//要素数の分繰り返し
 		for (int i = 0; i < length; i++) {
 			numbersA[i] = random.nextInt(99); //0～99までの乱数を生成し要素の値とする
-			numbersB[i] = random.nextInt(99); //0～99までの乱数を生成し要素の値とする
+		}
+
+		//要素数分繰り返し
+		for (int i = 0; i < length; i++) {
+			numbersB[i] = numbersA[length - (i + 1)]; //配列Bの値に配列Aの同インデックスの値を代入
 		}
 
 		//2つの配列を表示
@@ -38,22 +42,7 @@ public class practice6_13 {
 		for (int i = 0; i < length; i++) {
 			System.out.print(numbersA[i] + (i < length - 1 ? "," : " }\n"));
 		}
-		System.out.print("numbersB : { ");
-		for (int i = 0; i < length; i++) {
-			System.out.print(numbersB[i] + (i < length - 1 ? "," : " }\n"));
-		}
-
-		//要素数分繰り返し
-		for (int i = 0; i < length; i++) {
-			numbersB[i] = numbersA[i]; //配列Bの値に配列Aの同インデックスの値を代入
-		}
-
-		//2つの配列を表示
 		System.out.println("入れ替え後");
-		System.out.print("numbersA : { ");
-		for (int i = 0; i < length; i++) {
-			System.out.print(numbersA[i] + (i < length - 1 ? "," : " }\n"));
-		}
 		System.out.print("numbersB : { ");
 		for (int i = 0; i < length; i++) {
 			System.out.print(numbersB[i] + (i < length - 1 ? "," : " }\n"));

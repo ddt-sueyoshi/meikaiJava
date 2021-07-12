@@ -29,13 +29,12 @@ public class practice6_10 {
 		//配列の要素数分繰り返し
 		for (int i = 1; i < length; i++) {
 			//1つ前の要素と一致しない乱数が得られるまで繰り返し
-			int number;
-			{
+			int number = 0;
+			do {
 				//1～10の乱数（0～9の乱数+1）
 				number = random.nextInt(9) + 1;
-			}
-			while (number == numbers[i - 1])
-				;
+			} while (number == numbers[i - 1]);
+
 			//乱数を配列の値として格納
 			numbers[i] = number;
 		}

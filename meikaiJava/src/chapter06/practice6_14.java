@@ -7,7 +7,7 @@ package chapter06;
  *月を1～12の数値として表示して、その英語表現を入力させる英単語学習プログラムを作成せよ。
  *・出題する月の値は乱数で生成する。
  *・学習者が望む限り、何度も繰り返せる。
- *・同一好きを連続して出題しない。
+ *・同一月を連続して出題しない。
  */
 //参照するクラスを宣言
 import java.util.Random;
@@ -35,7 +35,7 @@ public class practice6_14 {
 			//0～11の乱数を、直前の出題と重複しなくなるまで生成
 			do {
 				month = random.nextInt(12);
-			} while (months[month] == correct);
+			} while (months[month].equals(correct) );
 			//乱数に対応する月の英語表現の正解を代入
 			correct = months[month];
 			//出題のメッセージを出力し、キーボードから回答を読み込む

@@ -20,23 +20,15 @@ public class practice6_1 {
 
 		//入力を促すメッセージ出力
 		//入力された値を配列に格納
-		System.out.print("整数1：");
-		numbers[0] = standardInput.nextDouble();
-		System.out.print("整数2：");
-		numbers[1] = standardInput.nextDouble();
-		System.out.print("整数3：");
-		numbers[2] = standardInput.nextDouble();
-		System.out.print("整数4：");
-		numbers[3] = standardInput.nextDouble();
-		System.out.print("整数5：");
-		numbers[4] = standardInput.nextDouble();
+		for(int i=0;i<5;i++) {
+			System.out.print("整数"+i+"：");
+			numbers[i] = standardInput.nextDouble();
+		}
 
 		//配列の中身を表示
-		System.out.print("numbers[" + 0 + "]" + numbers[0] + "  ");
-		System.out.print("numbers[" + 1 + "]" +numbers[1] + " ");
-		System.out.print("numbers[" + 2 + "]" +numbers[2] + " ");
-		System.out.print("numbers[" + 3 + "]" +numbers[3] + " ");
-		System.out.print("numbers[" + 4 + "]" +numbers[4] + " ");
+		for(int i=0;i<5;i++) {
+			System.out.print("numbers[" + i + "]" + numbers[i] + "  ");
+		}
 	}
 
 }
