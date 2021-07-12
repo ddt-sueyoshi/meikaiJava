@@ -39,10 +39,8 @@ public class practice4_3 {
 		littleNumber++;
 
 		//繰り返す処理内容
-		while (littleNumber != bigNumber)
-			;
-		{ //1つめの整数と2つめの整数と等しくない場合繰り返し
-			//1つめの整数を出力
+		while (littleNumber != bigNumber) { //1つめの整数と2つめの整数と等しくない場合繰り返し
+											//1つめの整数を出力
 			System.out.print(littleNumber + " ");
 			//1つめの整数に1加算
 			littleNumber++;
