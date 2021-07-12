@@ -21,9 +21,9 @@ public class practice5_5 {
 		System.out.print("整数：");
 		int number1 = standardInput.nextInt();
 		System.out.print("整数：");
-		double number2 = standardInput.nextInt();
+		int number2 = standardInput.nextInt();
 		System.out.print("整数：");
-		double number3 = standardInput.nextInt();
+		int number3 = standardInput.nextInt();
 
 		//入力された整数の合計（整数）と平均（実数）を表示
 		System.out.print("合計：" + (number1 + number2 + number3)
