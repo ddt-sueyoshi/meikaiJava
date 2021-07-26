@@ -13,7 +13,11 @@ public class practice7_16 {
 	//読み込みクラスの生成
 	static Scanner standardInput = new Scanner(System.in);
 
-	// 配列aの全要素の最小値を求める
+	/**
+	 * 配列aの全要素の最小値を求める
+	 * @param a 整数配列
+	 * @return 配列の最小値
+	 */
 	static int minOf(int[] a) {
 		int min = a[0]; //最小値を格納する整数変数を先頭の要素で初期化
 		for (int i = 1; i < a.length; i++) { //配列の要素数分繰り返す

@@ -3,7 +3,7 @@ package chapter07;
 /**
  *
  * @author システム開発部
- *目そっこineSearchは、探索するキーと同じ値の要素が複数個存在する場合、最も先頭に位置する要素を見つけるものである。
+ *メソッドineSearchは、探索するキーと同じ値の要素が複数個存在する場合、最も先頭に位置する要素を見つけるものである。
  *最も末尾側に位置する要素を見つけるメソッドlineSearchRを作成せよ。
  */
 //参照するクラスを宣言
@@ -13,6 +13,12 @@ public class practice7_17 {
 	//読み込みクラスの生成
 	static Scanner standardInput = new Scanner(System.in);
 
+	/**
+	 * 配列の末尾側から特定の値を検索する
+	 * @param a 整数配列
+	 * @param key 検索値
+	 * @return 検索値と一致する値のインデックス
+	 */
 	static int lineSearchR(int[] a, int key) {
 		for (int i = a.length - 1; i >= 0; i--) {
 			if (a[i] == key) {

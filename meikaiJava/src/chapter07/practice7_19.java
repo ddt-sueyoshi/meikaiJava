@@ -15,12 +15,26 @@ public class practice7_19 {
 	//読み込みクラスの生成
 	static Scanner standardInput = new Scanner(System.in);
 
-	static void aryRmvN(int[] a, int idx, int n) {
+	/**
+	 * 配列aから要素[idx]を先頭とするn個の要素を削除する
+	 * @param a 整数配列
+	 * @param idx 削除開始のインデックス
+	 * @param n 削除数
+	 * @return 指定のインデックスから指定の個数値を削除した配列
+	 */
+	static int[] aryRmvN(int[] a, int idx, int n) {
+		int[] b = new int[a.length];
 		//指定の要素番号から配列の末尾のn前まで繰り返す
-		for (int i = idx; i < a.length - n; i++) {
+		for (int i = 0; i < a.length; i++) {
+			if (i < idx || i >= idx + n) {
+				b[i] = a[i];
+			}
 			//n末尾側にあった要素の値を代入
-			a[idx] = a[idx + n];
+			else {
+				b[i] = a[i + n];
+			}
 		}
+		return b;
 	}
 
 	public static void main(String[] args) {
@@ -54,11 +68,11 @@ public class practice7_19 {
 		}
 
 		//入力された位置から入力された数の要素を削除
-		aryRmvN(numbers, idx, count);
+		int[] removed = aryRmvN(numbers, idx, count);
 		//削除後の配列を表示
 		System.out.print("numbers { ");
-		for (int i = 0; i < numbers.length; i++) {
-			System.out.print(numbers[i] + ", ");
+		for (int i = 0; i < removed.length; i++) {
+			System.out.print(removed[i] + ", ");
 		}
 		System.out.print("}");
 

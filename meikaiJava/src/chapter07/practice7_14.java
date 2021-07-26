@@ -16,7 +16,13 @@ public class practice7_14 {
 	static Scanner standardInput = new Scanner(System.in);
 	//指定のビット目が持つ値を初期化
 	static int power = 1;
-
+	
+	/**
+	 * 特定のビット目が0か1か判定する
+	 * @param x 対象の整数
+	 * @param pos 判定するビットの桁
+	 * @return 0か1を返却する
+	 */
 	//特定のビット目が0か1か判定する
 	static int checkBit(int x, int pos) {
 		power = (int) Math.pow(2, pos);
@@ -28,7 +34,12 @@ public class practice7_14 {
 		}
 	}
 
-	//特定のビット目から特定桁数を1にする
+	/**
+	 * 特定のビット目を1にする
+	 * @param x 対象の整数
+	 * @param pos 変更するビットの桁
+	 * @return 特定の桁のビットを変更した整数を返却
+	 */
 	static int setN(int x, int pos,int count) {
 		for (int i = pos; i <= pos+count-1; i++) {
 			if (checkBit(x, i) == 0) { //特定の桁が0ならば1にする、1ならば何もしない
@@ -38,6 +49,12 @@ public class practice7_14 {
 		return x;
 	}
 
+	/**
+	 * 特定のビット目を0にする
+	 * @param x 対象の整数
+	 * @param pos 変更するビットの桁
+	 * @return 特定の桁のビットを変更した整数を返却
+	 */
 	//特定のビット目から特定の桁数を0にする
 	static int resetN(int x, int pos,int count) {
 		for (int i = pos; i <= pos+count-1; i++) {
@@ -48,7 +65,12 @@ public class practice7_14 {
 		return x;
 	}
 
-	//特定のビット目から特定の桁数を反転する
+	/**
+	 * 特定のビット目を反転する
+	 * @param x 対象の整数
+	 * @param pos 変更するビットの桁
+	 * @return 特定の桁のビットを変更した整数を返却
+	 */
 	static int inverseN(int x, int pos,int count) { //特定の桁が0ならば1にする
 		for (int i = pos; i <= pos+count-1; i++) {
 			if (checkBit(x, i) == 0) {
@@ -60,7 +82,10 @@ public class practice7_14 {
 		return x;
 	}
 
-	//ビット構成を表示する
+	/**
+	 * ビット構成を表示する
+	 * @param x 対象の整数
+	 */
 	static void printBits(int x) {
 		for (int i = 31; i >= 0; i--) {
 			System.out.print(((x >>> i & 1) == 1) ? '1' : '0');

@@ -16,17 +16,27 @@ public class practice7_13 {
 	//指定のビット目が持つ値を初期化
 	static int power = 1;
 
-	//特定のビット目が0か1か判定する
+	/**
+	 * 特定のビット目が0か1か判定する
+	 * @param x 対象の整数
+	 * @param pos 判定するビットの桁
+	 * @return 0か1を返却する
+	 */
 	static int checkBit(int x, int pos) {
-		int remainder=x % (power * 2);
-		if (remainder!=0 && remainder >= power) {
+		int remainder = x % (power * 2);
+		if (remainder != 0 && remainder >= power) {
 			return 1;
 		} else {
 			return 0;
 		}
 	}
 
-	//特定のビット目を1にする
+	/**
+	 * 特定のビット目を1にする
+	 * @param x 対象の整数
+	 * @param pos 変更するビットの桁
+	 * @return 特定の桁のビットを変更した整数を返却
+	 */
 	static int set(int x, int pos) {
 		if (checkBit(x, pos) == 0) { //特定の桁が0ならば1にする、1ならば何もしない
 			return x + power;
@@ -34,7 +44,12 @@ public class practice7_13 {
 		return x;
 	}
 
-	//特定のビット目を0にする
+	/**
+	 * 特定のビット目を0にする
+	 * @param x 対象の整数
+	 * @param pos 変更するビットの桁
+	 * @return 特定の桁のビットを変更した整数を返却
+	 */
 	static int reset(int x, int pos) {
 		if (checkBit(x, pos) == 1) { //特定の桁が1ならば0にする、0ならば何もしない
 			return x - power;
@@ -42,7 +57,12 @@ public class practice7_13 {
 		return x;
 	}
 
-	//特定のビット目を反転する
+	/**
+	 * 特定のビット目を反転する
+	 * @param x 対象の整数
+	 * @param pos 変更するビットの桁
+	 * @return 特定の桁のビットを変更した整数を返却
+	 */
 	static int inverse(int x, int pos) { //特定の桁が0ならば1にする
 		if (checkBit(x, pos) == 0) {
 			return x + power;
@@ -52,7 +72,10 @@ public class practice7_13 {
 		return x;
 	}
 
-	//ビット構成を表示する
+	/**
+	 * ビット構成を表示する
+	 * @param x 対象の整数
+	 */
 	static void printBits(int x) {
 		for (int i = 31; i >= 0; i--) {
 			System.out.print(((x >>> i & 1) == 1) ? '1' : '0');

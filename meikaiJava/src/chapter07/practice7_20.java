@@ -15,14 +15,30 @@ public class practice7_20 {
 	//読み込みクラスの生成
 	static Scanner standardInput = new Scanner(System.in);
 
-	static void aryIns(int[] a, int idx, int x) {
+/**
+ * 配列の指定のインデックスに値を挿入し、以降を右にずらす
+ * @param a 整数配列
+ * @param idx 挿入するインデックス
+ * @param x 挿入する値
+ * @return 値を挿入した配列
+ */
+	static int[] aryIns(int[] a, int idx, int x) {
+		int[] b = new int[a.length];
 		//指定の要素番号+1から配列の末尾まで繰り返す
-		for (int i = idx + 1; i < a.length; i++) {
+		for (int i = 0; i < a.length; i++) {
+			if (i < idx) {
+				b[i] = a[i];
+			} else if (i == idx) {
+				b[i] = x;
+			}
 			//一つ先頭側にあった要素の値を代入
-			a[idx] = a[idx - 1];
+			else {
+				b[i] = a[i - 1];
+			}
 		}
 		//指定の要素番号にxを代入
 		a[idx] = x;
+		return b;
 	}
 
 	public static void main(String[] args) {
@@ -52,11 +68,11 @@ public class practice7_20 {
 		newNumber = standardInput.nextInt();
 
 		//入力された位置から入力された数の要素を削除
-		aryIns(numbers, idx, newNumber);
+		int[] inserted = aryIns(numbers, idx, newNumber);
 		//削除後の配列を表示
 		System.out.print("numbers { ");
-		for (int i = 0; i < numbers.length; i++) {
-			System.out.print(numbers[i] + ", ");
+		for (int i = 0; i < inserted.length; i++) {
+			System.out.print(inserted[i] + ", ");
 		}
 		System.out.print("}");
 	}

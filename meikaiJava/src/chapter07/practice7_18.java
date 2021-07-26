@@ -14,12 +14,25 @@ public class practice7_18 {
 	//読み込みクラスの生成
 	static Scanner standardInput = new Scanner(System.in);
 
-	static void aryRmv(int[] a, int idx) {
+	/**
+	 * 配列から特定のインデックスの値を削除し、以降を左詰めにする
+	 * @param a 整数配列
+	 * @param idx 削除するインデックス
+	 * return 特定のインデックスの値を削除し、以降を左詰めにした配列
+	 */
+	static int[] aryRmv(int[] a, int idx) {
+		int[] b = new int[a.length];
 		//指定の要素番号から配列の末尾の1つ前まで繰り返す
-		for (int i = idx; i < a.length - 1; i++) {
+		for (int i = 0; i < a.length ; i++) {
+			if (i < idx || i == a.length - 1) {
+				b[i] = a[i];
+			}
 			//１つ末尾側にあった要素の値を代入
-			a[idx] = a[idx + 1];
+			else {
+				b[i] = a[i + 1];
+			}
 		}
+		return b;
 	}
 
 	public static void main(String[] args) {
@@ -44,11 +57,11 @@ public class practice7_18 {
 		}
 
 		//入力された位置の要素を削除
-		aryRmv(numbers, idx);
+		int[] removed = aryRmv(numbers, idx);
 		//削除後の配列を表示
 		System.out.print("numbers { ");
-		for (int i = 0; i < numbers.length; i++) {
-			System.out.print(numbers[i] + ", ");
+		for (int i = 0; i < removed.length; i++) {
+			System.out.print(removed[i] + ", ");
 		}
 		System.out.print("}");
 	}

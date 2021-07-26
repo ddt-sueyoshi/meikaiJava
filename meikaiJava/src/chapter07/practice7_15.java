@@ -13,7 +13,11 @@ public class practice7_15 {
 	//読み込みクラスの生成
 	static Scanner standardInput = new Scanner(System.in);
 
-	// 配列aの全要素の合計を求める
+	/**
+	 * 配列aの全要素の合計を求める
+	 * @param a 整数の配列
+	 * @return 配列の全要素の和
+	 */
 	static int sumOf(int[] a) {
 		int sum = 0;	//合計値を格納する整数変数を初期化
 		for (int i = 0; i < a.length; i++) {	//配列の要素数分繰り返す
