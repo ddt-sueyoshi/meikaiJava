@@ -22,7 +22,10 @@ public class practice7_33 {
 
 	}
 
-	//配列の要素数、全要素の値をキーボードから読み込み配列を作成
+	/**
+	 * 配列の要素数、全要素の値をキーボードから読み込み配列を作成
+	 * @return キーボードから読み込んだ整数配列
+	 */
 	static int[] makeAry() {
 		System.out.print("配列の長さ：");
 		int length = standardInput.nextInt();
@@ -35,7 +38,10 @@ public class practice7_33 {
 		return numbers;
 	}
 
-	//配列を受けとり全要素を表示する
+	/**
+	 * 配列を受けとり全要素を表示する
+	 * @param numbers 表示する整数配列
+	 */
 	static void showAry(int[] numbers) {
 		System.out.print("{ ");
 		for (int i = 0; i < numbers.length; i++) {
@@ -44,7 +50,10 @@ public class practice7_33 {
 		System.out.print("}");
 	}
 
-	//二次元配列の要素数、全要素の値をキーボードから読み込み配列を作成
+	/**
+	 * 二次元配列の要素数、全要素の値をキーボードから読み込み配列を作成
+	 * @return キーボードから読み込んだ2次元整数配列
+	 */
 	static int[][] makeDoubleAry() {
 		//行数・列数をキーボードから読み込む
 		System.out.print("配列の行数：");
@@ -64,7 +73,10 @@ public class practice7_33 {
 		return numbers;
 	}
 
-	//二次元配列を受けとり全要素を表示する
+	/**
+	 * 二次元配列を受けとり全要素を表示する
+	 * @param numbers 表示する2次元整数配列
+	 */
 	static void showAry(int[][] numbers) {
 		for (int i = 0; i < numbers.length; i++) {
 			for (int j = 0; j < numbers[i].length; j++) {

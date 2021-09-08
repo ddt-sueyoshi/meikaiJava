@@ -3,7 +3,7 @@ package chapter07;
 import java.util.Scanner;
 
 /**
- * 
+ *
  * @author システム開発部
  *演習7-26
  *配列aの要素a[idx]にxを挿入した配列を返却するメソッドarrayInsOfを作成せよ。
@@ -35,6 +35,13 @@ public class practice7_26 {
 		showAry(insertedAry);
 	}
 
+	/**
+	 * 配列aの要素a[idx]にxを挿入した配列を返却する
+	 * @param a 整数配列
+	 * @param idx 挿入するインデックス
+	 * @param n 挿入する整数値
+	 * @return 値を挿入した整数配列
+	 */
 	static int[] arrayInsOf(int[] a, int idx, int n) {
 		//引数より1要素数が多い配列を生成
 		int[] insertedAry = new int[a.length + 1];
@@ -52,7 +59,10 @@ public class practice7_26 {
 		return insertedAry;
 	}
 
-	//配列の要素数、全要素の値をキーボードから読み込み配列を作成
+	/**
+	 * 配列の要素数、全要素の値をキーボードから読み込み配列を作成
+	 * @return キーボードから読み込んだ整数配列
+	 */
 	static int[] makeAry() {
 		System.out.print("配列の長さ：");
 		int length = standardInput.nextInt();
@@ -65,7 +75,10 @@ public class practice7_26 {
 		return numbers;
 	}
 
-	//配列を受けとり全要素を表示する
+	/**
+	 * 配列を受けとり全要素を表示する
+	 * @param numbers 表示する整数配列
+	 */
 	static void showAry(int[] numbers) {
 		System.out.print("{ ");
 		for (int i = 0; i < numbers.length; i++) {

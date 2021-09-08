@@ -21,13 +21,13 @@ public class practice7_8 {
 	 */
 	static int random(int min, int max) {
 		//最小最大が正しくない場合最小値を返す
-		if (min > max)
+		if (min >= max)
 			return min;
 
 		//乱数クラスを生成
 		Random random = new Random();
 		//最小と最大の間の乱数を返す
-		return (random.nextInt(max - min + 1) + min);
+		return (random.nextInt(max - min) + min);
 	}
 
 	public static void main(String[] args) {

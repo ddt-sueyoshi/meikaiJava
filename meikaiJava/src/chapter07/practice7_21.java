@@ -13,7 +13,10 @@ public class practice7_21 {
 	//読み込みクラスの生成
 	static Scanner standardInput = new Scanner(System.in);
 
-	//配列の要素数、全要素の値をキーボードから読み込み配列を作成
+	/**
+	 * 配列の要素数、全要素の値をキーボードから読み込み配列を作成
+	 * @return キーボードから読み込んだ整数配列
+	 */
 	static int[] makeAry() {
 		System.out.print("配列の長さ：");
 		int length = standardInput.nextInt();
@@ -26,7 +29,12 @@ public class practice7_21 {
 		return numbers;
 	}
 
-	//二つの配列の要素を入れ替える
+	/**
+	 * 二つの配列の要素を入れ替える
+	 * @param aryX
+	 * @param aryY
+	 * @return 入れ替えられた２つの配列を格納する2次元配列
+	 */
 	static int[][] aryExchng(int[] aryX, int[] aryY) {
 		//短い配列の要素数分繰り返す
 		int count = aryX.length <= aryY.length ? aryX.length : aryY.length;
@@ -40,7 +48,10 @@ public class practice7_21 {
 		return twoArys;
 	}
 
-	//配列を受けとり全要素を表示する
+	/**
+	 * 配列を受けとり全要素を表示する
+	 * @param numbers 表示する整数配列
+	 */
 	static void showAry(int[] numbers) {
 		System.out.print("{ ");
 		for (int i = 0; i < numbers.length; i++) {

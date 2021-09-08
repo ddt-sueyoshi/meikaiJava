@@ -50,19 +50,19 @@ public class practice7_10 {
 		int variation = random.nextInt(4);
 		switch (variation) {
 		case 0:
-			question = "x + y + z ="; //問題文を代入
+			question = x + " + " + y + " + " + z + " ="; //問題文を代入
 			correct = x + y + z; //正解を代入
 			break;
 		case 1:
-			question = "x + y - z ="; //問題文を代入
+			question = x + " + " + y + " - " + z + " ="; //問題文を代入
 			correct = x + y - z; //正解を代入
 			break;
 		case 2:
-			question = "x - y + z ="; //問題文を代入
+			question = x + " - " + y + " + " + z + " ="; //問題文を代入
 			correct = x - y + z; //正解を代入
 			break;
 		case 3:
-			question = "x - y - z ="; //問題文を代入
+			question = x + " - " + y + " - " + z + " ="; //問題文を代入
 			correct = x - y - z; //正解を代入
 			break;
 		}

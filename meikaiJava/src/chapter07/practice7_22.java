@@ -21,7 +21,11 @@ public class practice7_22 {
 		showAry(aryClone);
 	}
 
-	//受け取った配列と長さ、全要素が同じ配列を生成
+	/**
+	 * 受け取った配列と長さ、全要素が同じ配列を生成
+	 * @param a 整数配列
+	 * @return aと長さ、全要素が同じ整数配列
+	 */
 	static int[] arrayClone(int[] a) {
 		//a同じ要素数の配列を生成
 		int[] clone = new int[a.length];
@@ -35,7 +39,10 @@ public class practice7_22 {
 	//読み込みクラスの生成
 	static Scanner standardInput = new Scanner(System.in);
 
-	//配列の要素数、全要素の値をキーボードから読み込み配列を作成
+	/**
+	 * 配列の要素数、全要素の値をキーボードから読み込み配列を作成
+	 * @return キーボードから読み込んだ整数配列
+	 */
 	static int[] makeAry() {
 		System.out.print("配列の長さ：");
 		int length = standardInput.nextInt();
@@ -48,7 +55,10 @@ public class practice7_22 {
 		return numbers;
 	}
 
-	//配列を受けとり全要素を表示する
+	/**
+	 * 配列を受けとり全要素を表示する
+	 * @param numbers 表示する整数配列
+	 */
 	static void showAry(int[] numbers) {
 		System.out.print("{ ");
 		for (int i = 0; i < numbers.length; i++) {

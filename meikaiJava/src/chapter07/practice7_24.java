@@ -3,7 +3,7 @@ package chapter07;
 import java.util.Scanner;
 
 /**
- * 
+ *
  * @author システム開発部
  *演習7-24
  *配列aから要素a[idx]を削除した配列を返却するメソッドarrayRmvOfを作成せよ。
@@ -30,6 +30,12 @@ public class practice7_24 {
 		showAry(removedAry);
 	}
 
+	/**
+	 * 配列aから要素a[idx]を削除した配列を返却する
+	 * @param a 整数配列
+	 * @param idx 削除するインデックス
+	 * @return 対象を削除した整数配列
+	 */
 	static int[] arrayRmvOf(int[] a, int idx) {
 		//引数より1つ要素数が少ない配列を生成
 		int[] deletedAry = new int[a.length - 1];
@@ -45,7 +51,10 @@ public class practice7_24 {
 		return deletedAry;
 	}
 
-	//配列の要素数、全要素の値をキーボードから読み込み配列を作成
+	/**
+	 * 配列の要素数、全要素の値をキーボードから読み込み配列を作成
+	 * @return キーボードから読み込んだ整数配列
+	 */
 	static int[] makeAry() {
 		System.out.print("配列の長さ：");
 		int length = standardInput.nextInt();
@@ -58,7 +67,10 @@ public class practice7_24 {
 		return numbers;
 	}
 
-	//配列を受けとり全要素を表示する
+	/**
+	 * 配列を受けとり全要素を表示する
+	 * @param numbers 表示する整数配列
+	 */
 	static void showAry(int[] numbers) {
 		System.out.print("{ ");
 		for (int i = 0; i < numbers.length; i++) {

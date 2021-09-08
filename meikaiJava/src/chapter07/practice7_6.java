@@ -46,7 +46,6 @@ public class practice7_6 {
 		default:
 			break;
 		}
-		return;
 	}
 
 	public static void main(String[] args) {

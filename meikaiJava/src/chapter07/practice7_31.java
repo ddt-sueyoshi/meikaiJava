@@ -3,7 +3,7 @@ package chapter07;
 import java.util.Scanner;
 
 /**
- * 
+ *
  * @author システム開発部
  *演習7-31
  *int型の整数xの絶対値、long型整数xの絶対値、float型実数の絶対値、double型実数の絶対値を求める、多重定義されたメソッド群を作成せよ。
@@ -31,6 +31,11 @@ public class practice7_31 {
 		System.out.println("整数dの絶対値：" + absolute(numberD));
 	}
 
+	/**
+	 * int型整数の絶対値を求める
+	 * @param x
+	 * @return
+	 */
 	static int absolute(int x) {
 		int abslt = x; //引数で初期化
 		if (x < 0) //もし負の数なら正負を反転させる
@@ -38,6 +43,11 @@ public class practice7_31 {
 		return abslt;
 	}
 
+	/**
+	 * long型整数の絶対値を求める
+	 * @param x
+	 * @return
+	 */
 	static long absolute(long x) {
 		long abslt = x; //引数で初期化
 		if (x < 0) //もし負の数なら正負を反転させる
@@ -45,6 +55,11 @@ public class practice7_31 {
 		return abslt;
 	}
 
+	/**
+	 * float型整数の絶対値を求める
+	 * @param x
+	 * @return
+	 */
 	static float absolute(float x) {
 		float abslt = x; //引数で初期化
 		if (x < 0) //もし負の数なら正負を反転させる
@@ -52,6 +67,11 @@ public class practice7_31 {
 		return abslt;
 	}
 
+	/**
+	 * double型整数の絶対値を求める
+	 * @param x
+	 * @return
+	 */
 	static double absolute(double x) {
 		double abslt = x; //引数で初期化
 		if (x < 0) //もし負の数なら正負を反転させる

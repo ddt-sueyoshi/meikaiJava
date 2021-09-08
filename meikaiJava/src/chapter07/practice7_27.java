@@ -20,7 +20,14 @@ public class practice7_27 {
 		addMatrix(numbersX,numbersY,numbersZ);
 	}
 
-	//三つの配列の要素数が等しければ加算を行っ他配列を表示しtrue、等しくなければ加算を行わずにfalseを返却し終了
+	/**
+	 * 三つの配列の要素数が等しければ加算を行っ他配列を表示しtrue、
+	 * 等しくなければ加算を行わずにfalseを返却し終了
+	 * @param x
+	 * @param y
+	 * @param z
+	 * @return
+	 */
 	static boolean addMatrix(int[][] x, int[][] y, int[][] z) {
 		//行数・列数が等しくない場合、falseを返し終了
 		if (x.length != y.length || y.length != z.length ||
@@ -45,7 +52,10 @@ public class practice7_27 {
 	//読み込みクラスの生成
 	static Scanner standardInput = new Scanner(System.in);
 
-	//二次元配列の要素数、全要素の値をキーボードから読み込み配列を作成
+	/**
+	 * 二次元配列の要素数、全要素の値をキーボードから読み込み配列を作成
+	 * @return　キーボードから読み込んだ2次元整数配列
+	 */
 	static int[][] makeAry() {
 		//行数・列数をキーボードから読み込む
 		System.out.print("配列の行数：");
@@ -65,7 +75,10 @@ public class practice7_27 {
 		return numbers;
 	}
 
-	//二次元配列を受けとり全要素を表示する
+	/**
+	 * 二次元配列を受けとり全要素を表示する
+	 * @param numbers 表示する2次元整数配列
+	 */
 	static void showAry(int[][] numbers) {
 		for (int i = 0; i < numbers.length; i++) {
 			for (int j = 0; j < numbers[i].length; j++) {

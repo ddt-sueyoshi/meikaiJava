@@ -13,25 +13,40 @@ public class practice7_32 {
 	//読み込みクラスの生成
 	static Scanner standardInput = new Scanner(System.in);
 
-	//ビット構成を表示する
+	/**
+	 * byte型整数のビット構成を表示する
+	 * @param x
+	 */
 	static void printBits(byte x) {
 		for (int i = 31; i >= 0; i--) {
 			System.out.print(((x >>> i & 1) == 1) ? '1' : '0');
 		}
 	}
 
+	/**
+	 * short型整数のビット構成を表示する
+	 * @param x
+	 */
 	static void printBits(short x) {
 		for (int i = 31; i >= 0; i--) {
 			System.out.print(((x >>> i & 1) == 1) ? '1' : '0');
 		}
 	}
 
+	/**
+	 * intt型整数のビット構成を表示する
+	 * @param x
+	 */
 	static void printBits(int x) {
 		for (int i = 31; i >= 0; i--) {
 			System.out.print(((x >>> i & 1) == 1) ? '1' : '0');
 		}
 	}
 
+	/**
+	 * long型整数のビット構成を表示する
+	 * @param x
+	 */
 	static void printBits(long x) {
 		for (int i = 31; i >= 0; i--) {
 			System.out.print(((x >>> i & 1) == 1) ? '1' : '0');

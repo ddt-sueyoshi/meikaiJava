@@ -3,7 +3,7 @@ package chapter07;
 import java.util.Scanner;
 
 /**
- * 
+ *
  * @author システム開発部
  *二次元配列aと同じ配列を生成して返却するメソッドaryClone2を作成せよ。
  */
@@ -17,11 +17,15 @@ public class practice7_29 {
 		int[][] originalAry = makeAry();
 		//配列を複製
 		int[][] cloneAry = aryClone2(originalAry);
-		//複製を表示		
+		//複製を表示
 		showAry(cloneAry);
 	}
 
-	//行数・列数・各要素の値が同じ配列を複製し返却する
+	/**
+	 * 行数・列数・各要素の値が同じ配列を複製し返却する
+	 * @param original 2次元整数配列
+	 * @return 複製した2次元整数配列
+	 */
 	static int[][] aryClone2(int[][] original) {
 		//行数・列数の同じ配列を生成
 		int[][] clone = new int[original.length][original[0].length];
@@ -35,7 +39,10 @@ public class practice7_29 {
 		return clone;
 	}
 
-	//二次元配列の要素数、全要素の値をキーボードから読み込み配列を作成
+	/**
+	 * 二次元配列の要素数、全要素の値をキーボードから読み込み配列を作成
+	 * @return キーボードから読み込んだ2次元整数配列
+	 */
 	static int[][] makeAry() {
 		//行数・列数をキーボードから読み込む
 		System.out.print("配列の行数：");
@@ -55,7 +62,10 @@ public class practice7_29 {
 		return numbers;
 	}
 
-	//二次元配列を受けとり全要素を表示する
+	/**
+	 * 二次元配列を受けとり全要素を表示する
+	 * @param numbers 表示する2次元整数配列
+	 */
 	static void showAry(int[][] numbers) {
 		for (int i = 0; i < numbers.length; i++) {
 			for (int j = 0; j < numbers[i].length; j++) {
