@@ -1,5 +1,7 @@
 package practice08_02;
 
+import java.util.Scanner;
+
 /**
  *
  *
@@ -55,12 +57,14 @@ class Car {
 		double dist = Math.sqrt(dx * dx + dy + dy); // 移動距離
 
 		if (dist > fuel) {
+			System.out.println("ガソリンが不足して移動できません。");
 			return false;
-		} 	// 移動できない ・・・ 燃料不足
+		} // 移動できない ・・・ 燃料不足
 		else {
 			fuel -= dist; // 移動距離の分だけ燃料が減る
 			x += dx;
 			y += dy;
+			System.out.println("移動完了しました。");
 			return true; // 移動完了
 		}
 	}
@@ -68,11 +72,13 @@ class Car {
 	//----- 給油 -----//
 	boolean refueling(int additional) {
 		if (fuel + additional > 50000) {
+			System.out.println("ガソリンが多すぎて給油できません。");
 			return false;
-		} 	// 満タンをオーバーする場合は給油しない
+		} // 満タンをオーバーする場合は給油しない
 		else {
 			fuel += additional;
-			return true;	// 給油完了
+			System.out.println("給油完了しました。");
+			return true; // 給油完了
 		}
 	}
 }
@@ -80,7 +86,26 @@ class Car {
 public class practice08_02 {
 
 	public static void main(String[] args) {
-		// TODO 自動生成されたメソッド・スタブ
+		Scanner stdInput = new Scanner(System.in);
+
+		Car cabbage = new Car("キャベツ", 180, 150, 300, 0, 0, 50000);
+		cabbage.putSpec();
+
+		System.out.println("車を移動させよう。");
+		System.out.print("x:");
+		int x = stdInput.nextInt();
+		System.out.print("y:");
+		int y = stdInput.nextInt();
+		cabbage.move(x, y);
+
+		System.out.println("現在位置は x: " + cabbage.getX() + ", y: " + cabbage.getY() + " です。");
+
+		System.out.println("給油しよう。");
+		System.out.print("ガソリン:");
+		int fuel = stdInput.nextInt();
+		cabbage.refueling(fuel);
+
+		System.out.println("現在のガソリン量は" + cabbage.getFuel() + " です。");
 
 	}
 
