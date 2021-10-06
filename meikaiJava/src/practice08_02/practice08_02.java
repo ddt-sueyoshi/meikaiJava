@@ -91,6 +91,7 @@ public class practice08_02 {
 		Car cabbage = new Car("キャベツ", 180, 150, 300, 0, 0, 50000);
 		cabbage.putSpec();
 
+		//入力に応じて車を移動させる
 		System.out.println("車を移動させよう。");
 		System.out.print("x:");
 		int x = stdInput.nextInt();
@@ -100,6 +101,7 @@ public class practice08_02 {
 
 		System.out.println("現在位置は x: " + cabbage.getX() + ", y: " + cabbage.getY() + " です。");
 
+		//入力に応じて給油する
 		System.out.println("給油しよう。");
 		System.out.print("ガソリン:");
 		int fuel = stdInput.nextInt();
