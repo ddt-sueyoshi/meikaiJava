@@ -58,51 +58,50 @@ class Car {
 
 	//----- X方向にdx、Y方向にdy移動 -----//
 	boolean move(double dx, double dy) {
+		double dist = isMovable(dx, dy);
+		if (dist == 0) {
+			return false;
+		}
+		fuel -= dist; // 移動距離の分だけ燃料が減る
+		x += dx;
+		y += dy;
+		System.out.println("移動完了しました。");
+		return true; // 移動完了
+
+	}
+
+	//----- 移動可否チェック -----//
+	double isMovable(double dx, double dy) {
 		double dist = Math.sqrt(dx * dx + dy * dy); // 移動距離
 
 		if (dist > fuel) {
 			System.out.println("ガソリンが不足して移動できません。");
-			return false;
-		} // 移動できない ・・・ 燃料不足
-		else {
-			int isMoving;
-			do {
-				System.out.println("ガソリンは移動に十分な量です。\n移動しますか？\n1・・・はい　　2・・・いいえ");
-				isMoving = stdInput.nextInt();
-			} while (isMoving != 1 && isMoving != 2);
-
-			if (isMoving == 1) {
-				fuel -= dist; // 移動距離の分だけ燃料が減る
-				x += dx;
-				y += dy;
-				System.out.println("移動完了しました。");
-			} else {
-				System.out.println("移動しませんでした。");
-			}
-			return true; // 移動完了
+			return 0; // 移動できない ・・・ 燃料不足
+		} else {
+			System.out.println("ガソリンは移動に十分な量です。");
+			return dist; // 移動可能
 		}
 	}
 
 	//----- 給油 -----//
 	boolean refueling(int additional) {
+		if (isFuelable(additional)) {
+			fuel += additional;
+			System.out.println("給油完了しました。");
+			return true; // 給油完了
+		} else {
+			return false; //給油不可能
+		}
+	}
+
+	//----- 給油可否チェック -----//
+	boolean isFuelable(int additional) {
 		if (fuel + additional > maxFuel) {
 			System.out.println("ガソリンが多すぎて給油できません。");
-			return false;
-		} // 満タンをオーバーする場合は給油しない
-		else {
-			int isFueling;
-			do {
-				System.out.println("ガソリンは給油可能な量です。\n給油しますか？\n1・・・はい　　2・・・いいえ");
-				isFueling = stdInput.nextInt();
-			} while (isFueling != 1 && isFueling != 2);
-
-			if (isFueling == 1) {
-				fuel += additional;
-				System.out.println("給油完了しました。");
-			} else {
-				System.out.println("給油しませんでした。");
-			}
-			return true; // 給油完了
+			return false; // 満タンをオーバーする場合は給油しない
+		} else {
+			System.out.println("ガソリンは給油可能な量です。");
+			return true; // 給油可能
 		}
 	}
 }
