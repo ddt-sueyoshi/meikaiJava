@@ -39,7 +39,7 @@ class Human {
 	}
 
 	// プロパティの年齢と現在日付から生まれた年を計算する
-	void getAge() {
+	void displayAge() {
 		Date date = new Date();
 		Calendar calendar = Calendar.getInstance();
 		int year = calendar.get(Calendar.YEAR);
@@ -60,19 +60,19 @@ public class chapter08_01 {
 		//生まれ年を取得する
 		//生まれ年を表示する
 		oono.selfIntroduction();
-		oono.getAge();
+		oono.displayAge();
 
 		//自己紹介を行う
 		//生まれ年を取得する
 		//生まれ年を表示する
 		nakano.selfIntroduction();
-		nakano.getAge();
+		nakano.displayAge();
 
 		//自己紹介を行う
 		//生まれ年を取得する
 		//生まれ年を表示する
 		onodera.selfIntroduction();
-		onodera.getAge();
+		onodera.displayAge();
 
 		//入力から自己紹介をおこなう。
 		Scanner standardInput = new Scanner(System.in);
@@ -92,7 +92,7 @@ public class chapter08_01 {
 		
 		Human you =new Human(familyName,firstName,birthYear,birthPlace);
 		you.selfIntroduction();
-		you.getAge();
+		you.displayAge();
 
 	}
 
