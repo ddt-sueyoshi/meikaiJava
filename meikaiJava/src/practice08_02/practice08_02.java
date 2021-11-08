@@ -58,7 +58,7 @@ class Car {
 
 	//----- X方向にdx、Y方向にdy移動 -----//
 	boolean move(double dx, double dy) {
-		double dist = isMovable(dx, dy);
+		double dist = getMovingDist(dx, dy);
 		if (dist == 0) {
 			return false;
 		}
@@ -70,8 +70,8 @@ class Car {
 
 	}
 
-	//----- 移動可否チェック -----//
-	double isMovable(double dx, double dy) {
+	//----- 移動距離チェック -----//
+	double getMovingDist(double dx, double dy) {
 		double dist = Math.sqrt(dx * dx + dy * dy); // 移動距離
 
 		if (dist > fuel) {
