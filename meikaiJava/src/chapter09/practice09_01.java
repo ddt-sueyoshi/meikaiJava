@@ -52,22 +52,36 @@ public class practice09_01 {
 				new Human("サトウ", "シオリ", 1995, "神奈川県")
 		};
 
+		System.out.println("《生成後の要素に値を代入した人間クラスの出力》");
+		for (int i = 0; i < humans1.length; i++) {
+			humans1[i].selfIntroduction();
+			humans1[i].displayAge();
+			System.out.println();
+		}
+
+
 		//生成時に要素を初期化
 		Human[] humans2 = new Human[] {
 				new Human("スズキ", "トモカ", 1979, "埼玉県"),
 				new Human("マエダ", "マコト", 1999, "滋賀県")
 		};
 
+		System.out.println("《生成時に要素を初期化した人間クラスの出力》");
+		for (int i = 0; i < humans2.length; i++) {
+			humans2[i].selfIntroduction();
+			humans2[i].displayAge();
+			System.out.println();
+		}
+
 		//生成時に要素を初期化、要素は事前に変数として生成
 		Human sasaki = new Human("ササキ", "ジロウ", 1980, "三重県");
 		Human yagi = new Human("ヤギ", "アキラ", 2003, "鹿児島県");
 		Human[] humans3 = new Human[] { sasaki, yagi };
 
-		//確認用
-		//全ての配列を結合し表示
-		Human[] allHumans = new Human[] { humans1[0], humans1[1], humans2[0], humans2[1], humans3[0], humans3[1] };
-		for (int i = 0; i < allHumans.length; i++) {
-			allHumans[i].selfIntroduction();
+		System.out.println("《生成時に要素を初期化、要素は事前に変数として生成した人間クラスの出力》");
+		for (int i = 0; i < humans3.length; i++) {
+			humans3[i].selfIntroduction();
+			humans3[i].displayAge();
 			System.out.println();
 		}
 	}
