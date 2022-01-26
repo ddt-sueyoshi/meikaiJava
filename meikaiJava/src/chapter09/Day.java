@@ -1,9 +1,9 @@
 package chapter09;
 
 public class Day {
-	private int year = 1;
-	private int month = 1;
-	private int date = 1;
+	private int year = 1;	// 西暦年
+	private int month = 1;	// 1 ~ 12 の月
+	private int date = 1;	// 1 ~ 31 の日
 
 	//--  コンストラクタ  --//
 	public Day() {
