@@ -1,5 +1,6 @@
 package chapter09;
 
+// 日付クラス
 public class Day {
 	private int year = 1;	// 西暦年
 	private int month = 1;	// 1 ~ 12 の月
