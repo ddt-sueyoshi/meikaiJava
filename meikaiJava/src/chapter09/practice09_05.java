@@ -1,5 +1,7 @@
 package chapter09;
 
+import java.util.Scanner;
+
 /**
  * 
  * @author user
@@ -32,6 +34,17 @@ class Period {
 	public Day getTo() {
 		return to;
 	}
+
+	// --- 開始日を変更する --- //
+	public void changeFrom(Day newFrom) {
+		from = newFrom;
+	}
+
+	// --- 終了日を変更する --- //
+	public void changeTo(Day newTo) {
+		to = newTo;
+	}
+
 }
 
 public class practice09_05 {
@@ -45,6 +58,44 @@ public class practice09_05 {
 		Period period = new Period(fromDay, toDay);
 		// 開始日取得、終了日取得をし、文字列として表示する
 		System.out.println("開始日：" + period.getFrom() + "　終了日：" + period.getTo());
-	}
 
+		Scanner stdInput = new Scanner(System.in);
+
+		// 処理を行うフラグに1が入力された時、開始日を入力された年月日に変更する
+		int isChangingFrom = 0;
+		System.out.println("開始日を変更しますか？　　1・・・はい　　0・・・いいえ");
+		isChangingFrom = stdInput.nextInt();
+
+		if (isChangingFrom == 1) {
+			System.out.print("◆ 開始日　年：");
+			int year = stdInput.nextInt();
+			System.out.print("　　　　　月：");
+			int month = stdInput.nextInt();
+			System.out.print("　　　　　日：");
+			int date = stdInput.nextInt();
+
+			Day from = new Day(year, month, date);
+			period.changeFrom(from);
+		}
+
+		// 処理を行うフラグに1が入力された時、終了日を入力された年月日に変更する
+		int isChangingTo = 0;
+		System.out.println("終了日を変更しますか？　　1・・・はい　　0・・・いいえ");
+		isChangingTo = stdInput.nextInt();
+
+		if (isChangingTo == 1) {
+			System.out.print("◆ 終了日　年：");
+			int year = stdInput.nextInt();
+			System.out.print("　　　　　月：");
+			int month = stdInput.nextInt();
+			System.out.print("　　　　　日：");
+			int date = stdInput.nextInt();
+
+			Day to = new Day(year, month, date);
+			period.changeTo(to);
+		}
+
+		// 開始日取得、終了日取得をし、文字列として表示する
+		System.out.println("開始日：" + period.getFrom() + "　終了日：" + period.getTo());
+	}
 }
