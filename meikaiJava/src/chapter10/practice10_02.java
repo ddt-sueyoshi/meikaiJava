@@ -17,22 +17,14 @@ import java.util.Scanner;
 /** 採番クラス */
 class ExId {
 	static int counter = 0; // 何番までの番号を与えたか
+	static int n = 1; // 一つ前の識別番号との差
 	private int id; // 番号
 
 	/**
 	 * コンストラクタ
 	 */
 	public ExId() {
-		id = ++counter;
-	}
-
-	/**
-	 * コンストラクタ
-	 * 
-	 * @param n 一つ前の識別番号との差
-	 */
-	public ExId(int n) {
-		counter += n;
+		counter = counter + n;
 		id = counter;
 	}
 
@@ -53,6 +45,24 @@ class ExId {
 	static int getMaxId() {
 		return counter;
 	}
+
+	/**
+	 * 最新の番号と次の番号との差を取得する
+	 * 
+	 * @return 最新の番号と次の番号との差
+	 */
+	static int getDiff() {
+		return n;
+	}
+
+	/**
+	 * 最新の番号と次の番号との差を変更する
+	 * 
+	 * @param n 最新の番号と次の番号との差
+	 */
+	void changeDiff(int n) {
+		this.n = n;
+	}
 }
 
 public class practice10_02 {
@@ -64,16 +74,23 @@ public class practice10_02 {
 		ExId id = new ExId();
 		System.out.println("最新の番号は " + id.getMaxId() + " です。");
 
-		int isGoingOn = 0; // 続行フラグ 1が入力されれば採番処理を繰り返す
+		int isGoingOn = 0; // 続行フラグ
 		do {
-			// 入力値を直近の番号との差として採番する
-			System.out.println("次の番号は最新よりもいくつ大きくしますか？　数字を入力してください。");
-			int diff = stdInput.nextInt();
-			ExId nextId = new ExId(diff);
-			System.out.println("最新の番号は " + id.getMaxId() + " です。");
+			System.out.println("次の番号は最新の番号より " + id.getDiff() + " 大きくなります。\n変更しますか？　　1・・・はい　　0・・・いいえ\"");
+			int isChangingN = stdInput.nextInt(); // 1 が入力されれば最新の番号と次の番号との差を変更する
+			
+			if (isChangingN == 1) {
+				System.out.println("最新の番号よりいくつ大きくしますか。整数を入力してください。");
+				int n = stdInput.nextInt();
+				id.changeDiff(n); // 入力された値を最新の番号と次の番号との差とする
+			}
+			
+			// 新たに番号を発行し、表示する
+			ExId newId = new ExId();
+			System.out.println("新たに番号を発行しました。最新の番号は " + id.getMaxId() + " です。");
 
 			System.out.println("採番を続けますか？　　1・・・はい　　0・・・いいえ");
-			isGoingOn = stdInput.nextInt();
+			isGoingOn = stdInput.nextInt(); // 1が入力されれば採番処理を繰り返す
 		} while (isGoingOn == 1);
 	}
 
