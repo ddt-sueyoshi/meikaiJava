@@ -60,8 +60,8 @@ class ExId {
 	 * 
 	 * @param n 最新の番号と次の番号との差
 	 */
-	void changeDiff(int n) {
-		this.n = n;
+	static void changeDiff(int newN) {
+		n = newN;
 	}
 }
 
