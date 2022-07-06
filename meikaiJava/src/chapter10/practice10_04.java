@@ -21,9 +21,12 @@ import java.util.Scanner;
  */
 
 class Day {
-	private int year = 1; // 年
-	private int month = 1; // 月
-	private int date = 1; // 日
+	GregorianCalendar today = new GregorianCalendar(); // プログラム実行時の日付を取得する
+
+	private int year = today.get(YEAR); // 年
+	// GregorianCalendar.MONTH は JANUARY[0], FEBRUARY[1]... と値を保つので数字表記の場合は 1 加算する
+	private int month = today.get(MONTH) + 1; // 月
+	private int date = today.get(DATE); // 日
 
 	// -- y年は閏年か？ -- //
 	public static boolean isLeap(int y) {
@@ -32,10 +35,6 @@ class Day {
 
 	// -- コンストラクタ -- //
 	public Day() {
-		GregorianCalendar today = new GregorianCalendar(); // プログラム実行時の日付で初期化するよう改良
-		this.year = today.get(YEAR);
-		this.month = today.get(MONTH);
-		this.date = today.get(DATE);
 	}
 
 	public Day(int year) {
@@ -115,20 +114,20 @@ class Day {
 	// --- 月に不正な値が指定された場合は、適当な値に調整する（改良のため追加） --- //
 	private int validatedMonth(int m) {
 		if (m < 1) {
-			return 1;
+			return 1; // 1 より小さい場合は、1 を設定する
 		} else if (m < 13) {
 			return m;
 		} else {
-			return 12;
+			return 12; // 12 より大きい場合は、12 を設定する
 		}
 	}
 
 	// --- 日に不正な値が指定された場合は、適当な値に調整する --- //
 	private int validatedDate(int d) {
 		if (d < 1) {
-			return 1;
+			return 1; // 1 より小さい場合は1を設定する
 		} else if (d > lastDateInMonth(month)) {
-			return lastDateInMonth(month);
+			return lastDateInMonth(month); // その月の末日より大きい場合は、末日を設定する
 		} else {
 			return d;
 		}
@@ -145,15 +144,15 @@ class Day {
 		} else if (m == 2) {
 			return 28;
 		} else {
-			return 0; // 月が1~12以外の不正な場合
+			return 0; // 月が 1 ~ 12 以外の不正な場合
 		}
 	}
 
 	// --- 年内での経過日数（その年の元旦から数えて何日目であるか）を求めるメソッド --- //
 	public int countDays() {
-		int days = date - 1;
+		int days = date - 1; // 月の初めから何日経過したかを設定（1月2日 なら 1 日経過）
 		for (int m = 1; m < month; m++) {
-			days += lastDateInMonth(m);
+			days += lastDateInMonth(m); // 1月 より後の場合は、前月の末日までの日数を加算する
 		}
 		return days;
 	}
@@ -191,13 +190,15 @@ class Day {
 		return "day1 is after day2";
 	}
 
-	// --- 日付を一つ後ろに進めるメソッド（日付が2012年12月31日であれば、2013年1月1日に更新する） --- //
+	// --- 日付を一つ後ろに進めるメソッド（日付が 2012年12月31日 であれば、2013年1月1日 に更新する） --- //
 	public void advanceOneDay() {
 		if (month == 12 && date == lastDateInMonth(month)) {
+			// 12月31日 の場合は、翌年の 1月1日 に更新する
 			year++;
 			month = 1;
 			date = 1;
 		} else if (date == lastDateInMonth(month)) {
+			// 12月 以外の月末日の場合は、翌月の 1日 に更新する
 			month++;
 			date = 1;
 		} else {
@@ -208,8 +209,10 @@ class Day {
 	// --- 次の日の日付を返却するメソッド --- //
 	public Day oneDayAfter() {
 		if (month == 12 && date == lastDateInMonth(month)) {
+			// 12月31日 の場合は、翌年の 1月1日 を返却する
 			return new Day(year + 1);
 		} else if (date == lastDateInMonth(month)) {
+			// 12月以外の月末日の場合は、翌月の 1日 を返却する
 			return new Day(year, month + 1);
 		} else {
 			return new Day(year, month, date + 1);
@@ -219,10 +222,12 @@ class Day {
 	// --- 日付を一つ前に戻すメソッド --- //
 	public void turnBackOneDay() {
 		if (month == 1 && date == 1) {
+			// 1月1日 の場合は、前年の 12月31日 に更新する
 			year--;
 			month = 12;
 			date = 31;
 		} else if (date == 1) {
+			// 1月 以外の月初日の場合は、前月の末日に更新する
 			month--;
 			date = lastDateInMonth(month);
 		} else {
@@ -233,8 +238,10 @@ class Day {
 	// --- 前の日の日付を返却するメソッド --- //
 	public Day oneDayBefore() {
 		if (month == 1 && date == 1) {
+			// 1月1日 の場合は、前年の 12月31日 を返却する
 			return new Day(year - 1, 12, 31);
 		} else if (date == 1) {
+			// 1月 以外の月初日の場合は、前月の末日を返却する
 			return new Day(year, month - 1, lastDateInMonth(month));
 		} else {
 			return new Day(year, month, date - 1);
@@ -244,16 +251,19 @@ class Day {
 	// --- 日付をn日後ろに進めるメソッド --- //
 	public void advanceNDays(int n) {
 		while (countdownDays() < n) {
+			// 日数が年内の残日数より大きい場合は、翌年の 1月1日 までの日数を減算する処理を繰り返し、年を確定する
 			n = n - countdownDays() - 1;
 			year++;
 			month = 1;
 			date = 1;
 		}
 		while (lastDateInMonth(month) < date + n) {
+			// 日数が月末までの日数より大きい場合は、翌月の 1日 までの日数を減算する処理を繰り返し、月を確定する
 			n = n - (lastDateInMonth(month) - date + 1);
 			month++;
 			date = 1;
 		}
+		// 日を確定する
 		date = date + n;
 	}
 
@@ -267,16 +277,19 @@ class Day {
 	// --- 日付をn日前に戻すメソッド --- //
 	public void turnBackNDays(int n) {
 		while (countDays() < n) {
+			// 日数が年内の経過日数より大きい場合は、前年の 12月31日 までの日数を減算する処理を繰り返し、年を確定する
 			n = n - countDays() - 1;
 			year--;
 			month = 12;
 			date = 31;
 		}
 		while (date <= n) {
+			// 日数が月初日までの日数より大きい場合は、翌月の末日までの日数を減算する処理を繰り返し、月を確定する
 			n = n - date;
 			month--;
 			date = lastDateInMonth(month);
 		}
+		// 日を確定する
 		date = date - n;
 	}
 
