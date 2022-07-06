@@ -39,11 +39,13 @@ class Day {
 
 	public Day(int year) {
 		this.year = year;
+		this.date = validatedDate(date); // プログラム実行日の日が指定の月の末日を超える場合は、その月の末日を設定する（閏年2月末に実行される場合のみ該当）
 	}
 
 	public Day(int year, int month) {
 		this.year = year;
 		this.month = validatedMonth(month); // 不正な値が指定された場合は、適当な値に調整するよう改良
+		this.date = validatedDate(date); // プログラム実行日の日が指定の月の末日を超える場合は、その月の末日を設定する
 	}
 
 	public Day(int year, int month, int date) {
