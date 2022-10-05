@@ -9,7 +9,7 @@ public class Car {
 	private double y; // 現在位置Y座標（km）
 	private double fuel; // 残り燃料（リットル）
 	private Day purchaseDay; // 購入日
-	private int fuelConsumption = 15; // 燃費
+	private static final int fuelConsumption = 15; // 燃費
 
 	// --- コンストラクタ ---//
 	public Car(String name, int width, int height, int length, double x, double y, double fuel, Day purchaseDay) {
@@ -58,7 +58,7 @@ public class Car {
 		if (dist / fuelConsumption > fuel) {
 			return false; // 移動できない ・・・燃料不足
 		} else {
-			fuel -= dist / 15; // 移動距離の分だけ燃料が減る
+			fuel -= dist / fuelConsumption; // 移動距離の分だけ燃料が減る
 			x += dx;
 			y += dy;
 			return true; // 移動完了
