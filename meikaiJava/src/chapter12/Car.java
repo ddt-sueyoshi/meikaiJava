@@ -9,6 +9,7 @@ public class Car {
 	private double y; // 現在位置Y座標（km）
 	private double fuel; // 残り燃料（リットル）
 	private Day purchaseDay; // 購入日
+	private int fuelConsumption = 15; // 燃費
 
 	// --- コンストラクタ ---//
 	public Car(String name, int width, int height, int length, double x, double y, double fuel, Day purchaseDay) {
@@ -38,6 +39,10 @@ public class Car {
 		return new Day(purchaseDay);
 	} // 購入日を取得
 
+	public double getFuelConsumption() {
+		return fuelConsumption;
+	} // 燃費を取得
+
 	// --- スペック表示 ---//
 	public void putSpec() {
 		System.out.println("名前：" + name);
@@ -50,7 +55,7 @@ public class Car {
 	public boolean move(double dx, double dy) {
 		double dist = Math.sqrt(dx * dx + dy * dy); // 移動距離
 
-		if (dist / 15 > fuel) { // 燃費は 15km/L とする
+		if (dist / fuelConsumption > fuel) {
 			return false; // 移動できない ・・・燃料不足
 		} else {
 			fuel -= dist / 15; // 移動距離の分だけ燃料が減る

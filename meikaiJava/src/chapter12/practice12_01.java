@@ -30,8 +30,8 @@ public class practice12_01 {
 			System.out.print("繰り返しますか？　はい・・・1 いいえ・・・0：");
 		} while (stdIn.nextInt() == 1);
 
-
 		System.out.println();
+		System.out.println("現在位置はX: " + scoop.getX() + "km, Y: " + scoop.getY() + "kmです。");
 		System.out.println("走行距離は" + scoop.getTotalMileage() + "kmです。");
 	}
 }
@@ -50,12 +50,14 @@ class Car2 extends Car {
 		// 走行距離を取得
 	}
 
+	@Override
 	public boolean move(double dx, double dy) {
 		double dist = Math.sqrt(dx * dx + dy * dy); // 移動距離
+		boolean moveResult = super.move(dx, dy);
 
-		if (dist / 15 <= getFuel()) {
+		if (moveResult) {
 			totalMileage += dist; // 燃料不足でない場合のみ走行距離を計上する
 		}
-		return super.move(dx, dy);
+		return moveResult;
 	}
 }
