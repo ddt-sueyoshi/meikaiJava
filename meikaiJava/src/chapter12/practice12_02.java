@@ -10,10 +10,12 @@ package chapter12;
  */
 public class practice12_02 {
 	// a, bの普通預金と定期預金残高の合計額を比較した結果を返却するメソッド
-	// aの方が多ければ1、等しければ0、bの方が多ければ-1を返却する
 	static int compBalance(Account a, Account b) {
+		// aの預金総額
 		long balanceA = a.getTotalBalance();
+		// bの預金総額
 		long balanceB = b.getTotalBalance();
+		// aの方が多ければ1、等しければ0、bの方が多ければ-1を返却する
 		if (balanceA > balanceB) {
 			return 1;
 		} else if (balanceA == balanceB) {
@@ -25,42 +27,59 @@ public class practice12_02 {
 
 	public static void main(String[] args) {
 		// compBalance のテストを行う
+
+		// 普通預金のみの口座
 		Account scoop = new Account("Scoop", "001", 10000);
 		Account muck = new Account("muck", "002", 30000);
+		// 定期預金付きの口座
 		TimeAccount dizzy = new TimeAccount("Dizzy", "003", 50000, 10000);
 		TimeAccount roley = new TimeAccount("Roley", "004", 10000, 20000);
 
-		// Account同士の比較を行う
-		int compResult1 = compBalance(scoop, muck);
-		System.out.print(scoop.getName() + "の預金額の合計は" + scoop.getTotalBalance() + "、" + muck.getName() + "の預金額の合計は"
+		// Account同士の預金総額の比較を行う
+		// それぞれの口座名義と預金総額を表示する
+		System.out.println(scoop.getName() + "の預金額の合計は" + scoop.getTotalBalance() + "、" + muck.getName() + "の預金額の合計は"
 				+ muck.getTotalBalance() + "です。");
+		// Account同士の預金総額の比較を数値で取得する
+		int compResult1 = compBalance(scoop, muck);
+		// 比較結果の数値に応じてメッセージを表示する
 		if (compResult1 > 0) {
 			System.out.println("前者の方が大きいです。");
 		} else if (compResult1 == 0) {
 			System.out.println("同額です。");
 		} else {
+			// muckの方が預金総額が大きいので、この分岐に入る
 			System.out.println("後者の方が大きいです。");
 		}
+		System.out.println();
 
-		// TimeAccount同士の比較を行う
-		int compResult2 = compBalance(dizzy, roley);
-		System.out.print(dizzy.getName() + "の預金額の合計は" + dizzy.getTotalBalance() + "、" + roley.getName() + "の預金額の合計は"
+		// TimeAccount同士の預金総額の比較を行う
+		// それぞれの口座名義と預金総額を表示する
+		System.out.println(dizzy.getName() + "の預金額の合計は" + dizzy.getTotalBalance() + "、" + roley.getName() + "の預金額の合計は"
 				+ roley.getTotalBalance() + "です。");
+		// TimeAccount同士の預金総額の比較を数値で取得する
+		int compResult2 = compBalance(dizzy, roley);
+		// 比較結果の数値に応じてメッセージを表示する
 		if (compResult2 > 0) {
+			// dizzyの方が預金総額が大きいので、この分岐に入る
 			System.out.println("前者の方が大きいです。");
 		} else if (compResult2 == 0) {
 			System.out.println("同額です。");
 		} else {
 			System.out.println("後者の方が大きいです。");
 		}
+		System.out.println();
 
-		// AccountとTimeAccountの比較を行う
-		int compResult3 = compBalance(muck, roley);
-		System.out.print(muck.getName() + "の預金額の合計は" + muck.getTotalBalance() + "、" + roley.getName() + "の預金額の合計は"
+		// AccountとTimeAccountの預金総額の比較を行う
+		// それぞれの口座名義と預金総額を表示する
+		System.out.println(muck.getName() + "の預金額の合計は" + muck.getTotalBalance() + "、" + roley.getName() + "の預金額の合計は"
 				+ roley.getTotalBalance() + "です。");
+		// AccountとTimeAccountの預金総額の比較を数値で取得する
+		int compResult3 = compBalance(muck, roley);
+		// 比較結果の数値に応じてメッセージを表示する
 		if (compResult3 > 0) {
 			System.out.println("前者の方が大きいです。");
 		} else if (compResult3 == 0) {
+			// 預金総額が同額なので、この分岐に入る
 			System.out.println("同額です。");
 		} else {
 			System.out.println("後者の方が大きいです。");
