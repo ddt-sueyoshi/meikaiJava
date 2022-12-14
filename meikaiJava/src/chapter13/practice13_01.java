@@ -10,7 +10,7 @@ import java.util.Scanner;
  * @author user
  */
 public class practice13_01 {
-	static Scanner stdIn = new Scanner(System.in);
+	static final Scanner stdIn = new Scanner(System.in);
 
 	public static void main(String[] args) {
 		// テストの繰り返しの判定に使用する変数
