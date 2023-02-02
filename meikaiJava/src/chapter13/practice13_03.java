@@ -6,9 +6,6 @@ import java.util.Scanner;
 /**
  * ジャンケンの《プレイヤー》を表す抽象クラスを定義せよ。 そのクラスから、以下のクラスを派生すること。
  * ・人間プレイヤークラス（出す手をキーボードから読み込む） ・コンピュータプレイヤークラス（出す手を乱数から生成する）
- * 
- * @author user
- *
  */
 
 public class practice13_03 {
@@ -52,9 +49,6 @@ public class practice13_03 {
 
 /**
  * ジャンケンの《プレイヤー》を表す抽象クラス
- * 
- * @author user
- *
  */
 abstract class Player {
 	// 手を表すフィールド
@@ -80,9 +74,6 @@ abstract class Player {
 
 /**
  * ジャンケンの《人間プレイヤー》を表すクラス Playerクラスの継承クラス
- * 
- * @author user
- *
  */
 class HumanPlayer extends Player {
 	final static Scanner stdIn = new Scanner(System.in);
@@ -108,9 +99,6 @@ class HumanPlayer extends Player {
 
 /**
  * ジャンケンの《コンピュータプレイヤー》を表すクラス Playerクラスの継承クラス
- * 
- * @author user
- *
  */
 class ComputerPlayer extends Player {
 	Random rand = new Random();
